@@ -10,8 +10,21 @@ public class Reservation {
     private Vehicle associatedVehicle;
     private ParkingSpot parkingSpot;
 
-    public void extend(int days){
+    public Reservation(int id, LocalDate startDate, LocalDate endDate, Customer customer, Vehicle associatedVehicle, ParkingSpot parkingSpot) {
+        this.id = id;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.customer = customer;
+        this.associatedVehicle = associatedVehicle;
+        this.parkingSpot = parkingSpot;
+    }
 
+    public boolean extend(int days){
+        if (days <= 0){
+            return false;
+        }
+        endDate = endDate.plusDays(days);
+        return true;
     }
 
     public int getId() {

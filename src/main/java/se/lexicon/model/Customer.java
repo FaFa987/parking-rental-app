@@ -7,6 +7,21 @@ public class Customer {
     private String email;
     private Reservation reservation;
 
+    public Customer(int id, String name, String phone, String email) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public Customer(int id, String name, String phone, String email, Reservation reservation) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.reservation = reservation;
+    }
+
     public int getId() {
         return id;
     }
