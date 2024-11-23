@@ -3,10 +3,10 @@ package se.lexicon.model;
 public enum VehicleType {
     CAR(1,"Car1"),
     MOTORCYCLE(2,"Motorcycle1"),
-    ELECTRIC(3,"Electric1"),;
+    ELECTRIC(3,"Electric1");
 
-    private int code;
-    private String name;
+    private final int code;
+    private final String name;
 
     VehicleType(int code, String name) {
         this.code = code;
@@ -21,13 +21,16 @@ public enum VehicleType {
         return name;
     }
 
-    public VehicleType getVehicleType(int code) {
-        for (VehicleType vt : VehicleType.values()) {
-            if (vt.code == code) {
-                return vt;
+    public static VehicleType getVehicleType(int code) {
+
+        for (VehicleType type : VehicleType.values()) {
+            if (type.getCode() == code) {
+                return type;
             }
         }
-        throw new IllegalArgumentException("Invalid Vehicle Type");
-        //throw new EnumConstantNotPresentException(VehicleType.class, String.valueOf(code));
+        //throw new IllegalArgumentException("No VehicleType with code " + code + " found");
+        throw new EnumConstantNotPresentException(VehicleType.class, String.valueOf(code));
+
     }
+
 }
