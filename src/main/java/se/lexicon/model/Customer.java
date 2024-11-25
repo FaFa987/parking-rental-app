@@ -53,4 +53,12 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
 }

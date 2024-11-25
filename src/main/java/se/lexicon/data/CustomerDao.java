@@ -6,7 +6,8 @@ import java.util.Collection;
 import java.util.Optional;
 
 public interface CustomerDao {
-    Customer create(Customer customer);
+
+    Customer create(Customer customer) throws IllegalAccessException;
 
     Optional<Customer> findById(int id);
 
